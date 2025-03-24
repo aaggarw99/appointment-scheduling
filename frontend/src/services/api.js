@@ -58,4 +58,15 @@ export const getFacilities = async () => {
   }
 };
 
+export const findAppointmentSlots = async (filters) => {
+  try {
+    const queryString = new URLSearchParams(filters).toString();
+    const response = await api.get(`/appointment-slots/?${queryString}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching appointment slots with:', filters.toString());
+    throw error;
+  }
+};
+
 export default api; 

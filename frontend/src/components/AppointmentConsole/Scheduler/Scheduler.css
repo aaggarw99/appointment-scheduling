@@ -1,0 +1,62 @@
+.scheduler {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.searchFilters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.searchFilters input {
+    display: flex;
+    flex-wrap: wrap;            /* Ensures responsiveness */
+    gap: 12px;                  /* Even spacing between items */
+    width: 100%;                /* Ensures full-width layout */
+    align-items: center;  
+}
+
+.searchFilters form {
+    display: flex;
+    flex-wrap: wrap;            /* Ensures inputs wrap naturally */
+    gap: 12px;                  /* Consistent spacing between form elements */
+    flex: 1;                    /* Form stretches within .searchFilters */
+    width: 100%;                /* Ensures full width */
+}
+
+.search__button {
+    padding: 10px 20px;         /* Matches input height */
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-sizing: border-box;  
+}
+
+.search__input {
+    flex: 1;                    /* Each input expands equally */
+    min-width: 200px;           /* Prevents inputs from shrinking too much */
+    padding: 10px;              /* Consistent height with the button */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; 
+  }
+
+.searchResults {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.search__no-results-found {
+    text-align: center;
+    color: #666;
+    padding: 2rem;
+}

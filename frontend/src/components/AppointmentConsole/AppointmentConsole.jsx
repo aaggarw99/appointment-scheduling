@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Search from './Search/Search';
+import Scheduler from './Scheduler/Scheduler';
 import './AppointmentConsole.css';
 
 const AppointmentConsole = () => {
@@ -34,12 +35,7 @@ const AppointmentConsole = () => {
       <div className="appointment-console__content">
         {selectedTab === 'search' && <Search />}
         
-        {selectedTab === 'schedule' && (
-          <div className="schedule-section">
-            {/* Schedule component will go here */}
-            <p>Schedule an appointment</p>
-          </div>
-        )}
+        {selectedTab === 'schedule' && <Scheduler/>}
         
         {selectedTab === 'my-appointments' && (
           <div className="my-appointments-section">

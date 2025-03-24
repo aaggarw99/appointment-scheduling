@@ -8,6 +8,7 @@ const Search = () => {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [noResultsFound, setNoResultsFound] = useState(false);
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -20,6 +21,7 @@ const Search = () => {
       const data = searchType === 'providers' 
         ? await searchProviders(searchQuery)
         : await searchAssets(searchQuery);
+      setNoResultsFound(data.length === 0);
       setResults(data);
     } catch (err) {
       setError('Failed to fetch results. Please try again.');
@@ -82,7 +84,7 @@ const Search = () => {
           </div>
         )}
         
-        {!error && results.length === 0 && !loading && (
+        {noResultsFound && (
           <p className="search__no-results">
             No results found. Try searching for {searchType}.
           </p>

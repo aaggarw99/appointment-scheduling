@@ -10,4 +10,5 @@ router.register(r'assets', views.HealthcareAssetViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('appointment-slots/', views.AppointmentSlotsView.as_view(), name='appointment-slots')
 ]
